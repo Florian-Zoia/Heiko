@@ -17,3 +17,22 @@ C:\Users\FlorianZoia\OneDrive - COM Software\Desktop\WI2021(1)\WI2021\obj\Debug\
 C:\Users\FlorianZoia\OneDrive - COM Software\Desktop\WI2021(1)\WI2021\obj\Debug\net5.0-windows\ref\WI2021.dll
 C:\Users\FlorianZoia\OneDrive - COM Software\Desktop\WI2021(1)\WI2021\obj\Debug\net5.0-windows\WI2021.pdb
 C:\Users\FlorianZoia\OneDrive - COM Software\Desktop\WI2021(1)\WI2021\obj\Debug\net5.0-windows\WI2021.genruntimeconfig.cache
+D:\Programmieren\Heiko\Heiko\WI2021\bin\Debug\net5.0-windows\WI2021.exe
+D:\Programmieren\Heiko\Heiko\WI2021\bin\Debug\net5.0-windows\WI2021.deps.json
+D:\Programmieren\Heiko\Heiko\WI2021\bin\Debug\net5.0-windows\WI2021.runtimeconfig.json
+D:\Programmieren\Heiko\Heiko\WI2021\bin\Debug\net5.0-windows\WI2021.runtimeconfig.dev.json
+D:\Programmieren\Heiko\Heiko\WI2021\bin\Debug\net5.0-windows\WI2021.dll
+D:\Programmieren\Heiko\Heiko\WI2021\bin\Debug\net5.0-windows\ref\WI2021.dll
+D:\Programmieren\Heiko\Heiko\WI2021\bin\Debug\net5.0-windows\WI2021.pdb
+D:\Programmieren\Heiko\Heiko\WI2021\obj\Debug\net5.0-windows\WI2021.vbprojAssemblyReference.cache
+D:\Programmieren\Heiko\Heiko\WI2021\obj\Debug\net5.0-windows\WI2021.Form1.resources
+D:\Programmieren\Heiko\Heiko\WI2021\obj\Debug\net5.0-windows\WI2021.Resources.resources
+D:\Programmieren\Heiko\Heiko\WI2021\obj\Debug\net5.0-windows\WI2021.vbproj.GenerateResource.cache
+D:\Programmieren\Heiko\Heiko\WI2021\obj\Debug\net5.0-windows\WI2021.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programmieren\Heiko\Heiko\WI2021\obj\Debug\net5.0-windows\WI2021.AssemblyInfoInputs.cache
+D:\Programmieren\Heiko\Heiko\WI2021\obj\Debug\net5.0-windows\WI2021.AssemblyInfo.vb
+D:\Programmieren\Heiko\Heiko\WI2021\obj\Debug\net5.0-windows\WI2021.vbproj.CoreCompileInputs.cache
+D:\Programmieren\Heiko\Heiko\WI2021\obj\Debug\net5.0-windows\WI2021.dll
+D:\Programmieren\Heiko\Heiko\WI2021\obj\Debug\net5.0-windows\ref\WI2021.dll
+D:\Programmieren\Heiko\Heiko\WI2021\obj\Debug\net5.0-windows\WI2021.pdb
+D:\Programmieren\Heiko\Heiko\WI2021\obj\Debug\net5.0-windows\WI2021.genruntimeconfig.cache

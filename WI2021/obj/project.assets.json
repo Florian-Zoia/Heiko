@@ -8,19 +8,19 @@
     "net5.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\FlorianZoia\\.nuget\\packages\\": {}
+    "C:\\Users\\Flo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\FlorianZoia\\OneDrive - COM Software\\Desktop\\WI2021(1)\\WI2021\\WI2021.vbproj",
+      "projectUniqueName": "D:\\Programmieren\\Heiko\\Heiko\\WI2021\\WI2021.vbproj",
       "projectName": "WI2021",
-      "projectPath": "C:\\Users\\FlorianZoia\\OneDrive - COM Software\\Desktop\\WI2021(1)\\WI2021\\WI2021.vbproj",
-      "packagesPath": "C:\\Users\\FlorianZoia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\FlorianZoia\\OneDrive - COM Software\\Desktop\\WI2021(1)\\WI2021\\obj\\",
+      "projectPath": "D:\\Programmieren\\Heiko\\Heiko\\WI2021\\WI2021.vbproj",
+      "packagesPath": "C:\\Users\\Flo\\.nuget\\packages\\",
+      "outputPath": "D:\\Programmieren\\Heiko\\Heiko\\WI2021\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\FlorianZoia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Flo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -63,7 +63,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
