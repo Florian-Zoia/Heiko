@@ -36,16 +36,16 @@ Partial Class Form1
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Button11 = New System.Windows.Forms.Button()
-        Me.Button10 = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.los_fahren = New System.Windows.Forms.Button()
+        Me.RunterRitze = New System.Windows.Forms.Button()
+        Me.HochRitze = New System.Windows.Forms.Button()
+        Me.RunterKette = New System.Windows.Forms.Button()
+        Me.HochKette = New System.Windows.Forms.Button()
+        Me.BlinkRechts = New System.Windows.Forms.Button()
+        Me.BlinkLinks = New System.Windows.Forms.Button()
+        Me.GeschwAnzeige = New System.Windows.Forms.Label()
+        Me.RitzelAnzeige = New System.Windows.Forms.Label()
+        Me.KetteAnzeige = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -190,16 +190,16 @@ Partial Class Form1
         Me.GroupBox2.Controls.Add(Me.PictureBox3)
         Me.GroupBox2.Controls.Add(Me.PictureBox2)
         Me.GroupBox2.Controls.Add(Me.PictureBox1)
-        Me.GroupBox2.Controls.Add(Me.Button11)
-        Me.GroupBox2.Controls.Add(Me.Button10)
-        Me.GroupBox2.Controls.Add(Me.Button9)
-        Me.GroupBox2.Controls.Add(Me.Button8)
-        Me.GroupBox2.Controls.Add(Me.Button7)
-        Me.GroupBox2.Controls.Add(Me.Button6)
-        Me.GroupBox2.Controls.Add(Me.Button5)
-        Me.GroupBox2.Controls.Add(Me.Label10)
-        Me.GroupBox2.Controls.Add(Me.Label9)
-        Me.GroupBox2.Controls.Add(Me.Label8)
+        Me.GroupBox2.Controls.Add(Me.los_fahren)
+        Me.GroupBox2.Controls.Add(Me.RunterRitze)
+        Me.GroupBox2.Controls.Add(Me.HochRitze)
+        Me.GroupBox2.Controls.Add(Me.RunterKette)
+        Me.GroupBox2.Controls.Add(Me.HochKette)
+        Me.GroupBox2.Controls.Add(Me.BlinkRechts)
+        Me.GroupBox2.Controls.Add(Me.BlinkLinks)
+        Me.GroupBox2.Controls.Add(Me.GeschwAnzeige)
+        Me.GroupBox2.Controls.Add(Me.RitzelAnzeige)
+        Me.GroupBox2.Controls.Add(Me.KetteAnzeige)
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.Label5)
@@ -250,138 +250,138 @@ Partial Class Form1
         Me.PictureBox1.TabStop = False
         Me.PictureBox1.Visible = False
         '
-        'Button11
+        'los_fahren
         '
-        Me.Button11.BackColor = System.Drawing.Color.Black
-        Me.Button11.FlatAppearance.BorderSize = 0
-        Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button11.Font = New System.Drawing.Font("Segoe UI", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Button11.ForeColor = System.Drawing.Color.White
-        Me.Button11.Location = New System.Drawing.Point(226, 321)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(164, 59)
-        Me.Button11.TabIndex = 19
-        Me.Button11.Text = "los fahren"
-        Me.Button11.UseVisualStyleBackColor = False
+        Me.los_fahren.BackColor = System.Drawing.Color.Black
+        Me.los_fahren.FlatAppearance.BorderSize = 0
+        Me.los_fahren.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.los_fahren.Font = New System.Drawing.Font("Segoe UI", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.los_fahren.ForeColor = System.Drawing.Color.White
+        Me.los_fahren.Location = New System.Drawing.Point(226, 321)
+        Me.los_fahren.Name = "los_fahren"
+        Me.los_fahren.Size = New System.Drawing.Size(164, 59)
+        Me.los_fahren.TabIndex = 19
+        Me.los_fahren.Text = "los fahren"
+        Me.los_fahren.UseVisualStyleBackColor = False
         '
-        'Button10
+        'RunterRitze
         '
-        Me.Button10.BackColor = System.Drawing.Color.Black
-        Me.Button10.FlatAppearance.BorderSize = 0
-        Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button10.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Button10.ForeColor = System.Drawing.Color.White
-        Me.Button10.Location = New System.Drawing.Point(81, 233)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(146, 37)
-        Me.Button10.TabIndex = 18
-        Me.Button10.Text = "Runterschalten Ritze"
-        Me.Button10.UseVisualStyleBackColor = False
+        Me.RunterRitze.BackColor = System.Drawing.Color.Black
+        Me.RunterRitze.FlatAppearance.BorderSize = 0
+        Me.RunterRitze.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.RunterRitze.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.RunterRitze.ForeColor = System.Drawing.Color.White
+        Me.RunterRitze.Location = New System.Drawing.Point(81, 280)
+        Me.RunterRitze.Name = "RunterRitze"
+        Me.RunterRitze.Size = New System.Drawing.Size(146, 37)
+        Me.RunterRitze.TabIndex = 18
+        Me.RunterRitze.Text = "Runterschalten Ritze"
+        Me.RunterRitze.UseVisualStyleBackColor = False
         '
-        'Button9
+        'HochRitze
         '
-        Me.Button9.BackColor = System.Drawing.Color.Black
-        Me.Button9.FlatAppearance.BorderSize = 0
-        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button9.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Button9.ForeColor = System.Drawing.Color.White
-        Me.Button9.Location = New System.Drawing.Point(81, 278)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(146, 37)
-        Me.Button9.TabIndex = 17
-        Me.Button9.Text = "Hochschalten Ritze "
-        Me.Button9.UseVisualStyleBackColor = False
+        Me.HochRitze.BackColor = System.Drawing.Color.Black
+        Me.HochRitze.FlatAppearance.BorderSize = 0
+        Me.HochRitze.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.HochRitze.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.HochRitze.ForeColor = System.Drawing.Color.White
+        Me.HochRitze.Location = New System.Drawing.Point(81, 236)
+        Me.HochRitze.Name = "HochRitze"
+        Me.HochRitze.Size = New System.Drawing.Size(146, 37)
+        Me.HochRitze.TabIndex = 17
+        Me.HochRitze.Text = "Hochschalten Ritze "
+        Me.HochRitze.UseVisualStyleBackColor = False
         '
-        'Button8
+        'RunterKette
         '
-        Me.Button8.BackColor = System.Drawing.Color.Black
-        Me.Button8.FlatAppearance.BorderSize = 0
-        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button8.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Button8.ForeColor = System.Drawing.Color.White
-        Me.Button8.Location = New System.Drawing.Point(390, 278)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(146, 39)
-        Me.Button8.TabIndex = 16
-        Me.Button8.Text = "Runterschalten Kette "
-        Me.Button8.UseVisualStyleBackColor = False
+        Me.RunterKette.BackColor = System.Drawing.Color.Black
+        Me.RunterKette.FlatAppearance.BorderSize = 0
+        Me.RunterKette.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.RunterKette.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.RunterKette.ForeColor = System.Drawing.Color.White
+        Me.RunterKette.Location = New System.Drawing.Point(390, 278)
+        Me.RunterKette.Name = "RunterKette"
+        Me.RunterKette.Size = New System.Drawing.Size(146, 39)
+        Me.RunterKette.TabIndex = 16
+        Me.RunterKette.Text = "Runterschalten Kette "
+        Me.RunterKette.UseVisualStyleBackColor = False
         '
-        'Button7
+        'HochKette
         '
-        Me.Button7.BackColor = System.Drawing.Color.Black
-        Me.Button7.FlatAppearance.BorderSize = 0
-        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button7.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Button7.ForeColor = System.Drawing.Color.White
-        Me.Button7.Location = New System.Drawing.Point(390, 233)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(146, 39)
-        Me.Button7.TabIndex = 15
-        Me.Button7.Text = "Hochschalten Kette"
-        Me.Button7.UseVisualStyleBackColor = False
+        Me.HochKette.BackColor = System.Drawing.Color.Black
+        Me.HochKette.FlatAppearance.BorderSize = 0
+        Me.HochKette.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.HochKette.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.HochKette.ForeColor = System.Drawing.Color.White
+        Me.HochKette.Location = New System.Drawing.Point(390, 233)
+        Me.HochKette.Name = "HochKette"
+        Me.HochKette.Size = New System.Drawing.Size(146, 39)
+        Me.HochKette.TabIndex = 15
+        Me.HochKette.Text = "Hochschalten Kette"
+        Me.HochKette.UseVisualStyleBackColor = False
         '
-        'Button6
+        'BlinkRechts
         '
-        Me.Button6.BackColor = System.Drawing.Color.Black
-        Me.Button6.FlatAppearance.BorderSize = 0
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Button6.ForeColor = System.Drawing.Color.White
-        Me.Button6.Location = New System.Drawing.Point(390, 184)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(114, 41)
-        Me.Button6.TabIndex = 12
-        Me.Button6.Text = "->"
-        Me.Button6.UseVisualStyleBackColor = False
+        Me.BlinkRechts.BackColor = System.Drawing.Color.Black
+        Me.BlinkRechts.FlatAppearance.BorderSize = 0
+        Me.BlinkRechts.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BlinkRechts.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.BlinkRechts.ForeColor = System.Drawing.Color.White
+        Me.BlinkRechts.Location = New System.Drawing.Point(390, 184)
+        Me.BlinkRechts.Name = "BlinkRechts"
+        Me.BlinkRechts.Size = New System.Drawing.Size(114, 41)
+        Me.BlinkRechts.TabIndex = 12
+        Me.BlinkRechts.Text = "->"
+        Me.BlinkRechts.UseVisualStyleBackColor = False
         '
-        'Button5
+        'BlinkLinks
         '
-        Me.Button5.BackColor = System.Drawing.Color.Black
-        Me.Button5.FlatAppearance.BorderSize = 0
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Button5.ForeColor = System.Drawing.Color.White
-        Me.Button5.Location = New System.Drawing.Point(113, 184)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(114, 41)
-        Me.Button5.TabIndex = 10
-        Me.Button5.Text = "<-"
-        Me.Button5.UseVisualStyleBackColor = False
+        Me.BlinkLinks.BackColor = System.Drawing.Color.Black
+        Me.BlinkLinks.FlatAppearance.BorderSize = 0
+        Me.BlinkLinks.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BlinkLinks.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.BlinkLinks.ForeColor = System.Drawing.Color.White
+        Me.BlinkLinks.Location = New System.Drawing.Point(113, 184)
+        Me.BlinkLinks.Name = "BlinkLinks"
+        Me.BlinkLinks.Size = New System.Drawing.Size(114, 41)
+        Me.BlinkLinks.TabIndex = 10
+        Me.BlinkLinks.Text = "<-"
+        Me.BlinkLinks.UseVisualStyleBackColor = False
         '
-        'Label10
+        'GeschwAnzeige
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.Color.Black
-        Me.Label10.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(299, 145)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(24, 28)
-        Me.Label10.TabIndex = 9
-        Me.Label10.Text = "0"
-        Me.Label10.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.GeschwAnzeige.AutoSize = True
+        Me.GeschwAnzeige.BackColor = System.Drawing.Color.Black
+        Me.GeschwAnzeige.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.GeschwAnzeige.ForeColor = System.Drawing.Color.White
+        Me.GeschwAnzeige.Location = New System.Drawing.Point(299, 145)
+        Me.GeschwAnzeige.Name = "GeschwAnzeige"
+        Me.GeschwAnzeige.Size = New System.Drawing.Size(24, 28)
+        Me.GeschwAnzeige.TabIndex = 9
+        Me.GeschwAnzeige.Text = "0"
+        Me.GeschwAnzeige.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'Label9
+        'RitzelAnzeige
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.BackColor = System.Drawing.Color.Black
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(581, 134)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(13, 15)
-        Me.Label9.TabIndex = 8
-        Me.Label9.Text = "1"
+        Me.RitzelAnzeige.AutoSize = True
+        Me.RitzelAnzeige.BackColor = System.Drawing.Color.Black
+        Me.RitzelAnzeige.ForeColor = System.Drawing.Color.White
+        Me.RitzelAnzeige.Location = New System.Drawing.Point(581, 134)
+        Me.RitzelAnzeige.Name = "RitzelAnzeige"
+        Me.RitzelAnzeige.Size = New System.Drawing.Size(13, 15)
+        Me.RitzelAnzeige.TabIndex = 8
+        Me.RitzelAnzeige.Text = "1"
         '
-        'Label8
+        'KetteAnzeige
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Black
-        Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(581, 101)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(13, 15)
-        Me.Label8.TabIndex = 7
-        Me.Label8.Text = "1"
+        Me.KetteAnzeige.AutoSize = True
+        Me.KetteAnzeige.BackColor = System.Drawing.Color.Black
+        Me.KetteAnzeige.ForeColor = System.Drawing.Color.White
+        Me.KetteAnzeige.Location = New System.Drawing.Point(581, 101)
+        Me.KetteAnzeige.Name = "KetteAnzeige"
+        Me.KetteAnzeige.Size = New System.Drawing.Size(13, 15)
+        Me.KetteAnzeige.TabIndex = 7
+        Me.KetteAnzeige.Text = "1"
         '
         'Label7
         '
@@ -503,17 +503,18 @@ Partial Class Form1
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents FahrradName As Label
-    Friend WithEvents Label8 As Label
+    Friend WithEvents KetteAnzeige As Label
     Friend WithEvents Button11 As Button
-    Friend WithEvents Button10 As Button
-    Friend WithEvents Button9 As Button
-    Friend WithEvents Button8 As Button
-    Friend WithEvents Button7 As Button
-    Friend WithEvents Button6 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Label10 As Label
-    Friend WithEvents Label9 As Label
+    Friend WithEvents RunterRitze As Button
+    Friend WithEvents HochRitze As Button
+    Friend WithEvents RunterKette As Button
+    Friend WithEvents HochKette As Button
+    Friend WithEvents BlinkRechts As Button
+    Friend WithEvents BlinkLinks As Button
+    Friend WithEvents GeschwAnzeige As Label
+    Friend WithEvents RitzelAnzeige As Label
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents los_fahren As Button
 End Class

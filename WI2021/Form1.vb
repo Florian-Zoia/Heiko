@@ -59,5 +59,61 @@
     'Das Ende von GroupBox1 
 
     'GroupBox2 
+    Private Sub LosFahren(sender As Object, e As EventArgs) Handles los_fahren.Click
+        setGeschw()
+    End Sub
 
+    Sub setGeschw()
+        'Hier wird die Geschwindigkeit hochgezählt
+        While CurrentFahrrad.Geschwindigkeit < ((CurrentFahrrad.FMaxGeschw / (CurrentFahrrad.FKettenblaetter * CurrentFahrrad.FRitzel)) * CurrentFahrrad.CurrentRitze * CurrentFahrrad.CurrentKette)
+            CurrentFahrrad.Geschwindigkeit += 0.1
+            GeschwAnzeige.Text = $"{CurrentFahrrad.Geschwindigkeit.ToString("F1")} km/h"
+            GeschwAnzeige.Refresh()
+            System.Threading.Thread.Sleep(25)
+        End While
+
+        'Hier wird die Geschwindigkeit hochgezählt 
+        While CurrentFahrrad.Geschwindigkeit > (((CurrentFahrrad.FMaxGeschw / (CurrentFahrrad.FKettenblaetter * CurrentFahrrad.FRitzel)) * CurrentFahrrad.CurrentKette * CurrentFahrrad.CurrentRitze) + 1)
+            CurrentFahrrad.Geschwindigkeit -= 0.1
+            GeschwAnzeige.Text = $"{CurrentFahrrad.Geschwindigkeit.ToString("F1")} km/h"
+            GeschwAnzeige.Refresh()
+            System.Threading.Thread.Sleep(25)
+        End While
+    End Sub
+
+    Private Sub Hochschalten_Ritze(sender As Object, e As EventArgs) Handles HochRitze.Click
+        If CurrentFahrrad.CurrentRitze < CurrentFahrrad.FRitzel Then
+            CurrentFahrrad.CurrentRitze += 1
+            RitzelAnzeige.Text = CurrentFahrrad.CurrentRitze
+            RitzelAnzeige.Refresh()
+            setGeschw()
+        End If
+    End Sub
+
+    Private Sub Runterschalten_Ritze(sender As Object, e As EventArgs) Handles RunterRitze.Click
+        If CurrentFahrrad.CurrentRitze > 1 Then
+            CurrentFahrrad.CurrentRitze -= 1
+            RitzelAnzeige.Text = CurrentFahrrad.CurrentRitze
+            RitzelAnzeige.Refresh()
+            setGeschw()
+        End If
+    End Sub
+
+    Private Sub Hochschalten_Kette(sender As Object, e As EventArgs) Handles HochKette.Click
+        If CurrentFahrrad.CurrentKette < CurrentFahrrad.FKettenblaetter Then
+            CurrentFahrrad.CurrentKette += 1
+            KetteAnzeige.Text = CurrentFahrrad.CurrentKette
+            KetteAnzeige.Refresh()
+            setGeschw()
+        End If
+    End Sub
+
+    Private Sub Runterschalten_Kette(sender As Object, e As EventArgs) Handles RunterKette.Click
+        If CurrentFahrrad.CurrentKette > 1 Then
+            CurrentFahrrad.CurrentKette -= 1
+            KetteAnzeige.Text = CurrentFahrrad.CurrentKette
+            KetteAnzeige.Refresh()
+            setGeschw()
+        End If
+    End Sub
 End Class
