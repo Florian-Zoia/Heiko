@@ -21,4 +21,5 @@ Public Class Fahrrad
         CurrentRitze = crtRitzel
         CurrentKette = crtKette
     End Sub
+
 End Class

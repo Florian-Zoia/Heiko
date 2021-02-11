@@ -1,4 +1,5 @@
 ﻿Public Class Form1
+
     'Objekte (Fahrräder)
     Dim Rennrad As Fahrrad = New Fahrrad("Rennrad", 2, 10, 65, 0, 1, 1)
     Dim Crosser As Fahrrad = New Fahrrad("Crosser", 2, 11, 55, 0, 1, 1)
@@ -7,6 +8,8 @@
 
     'Lokale Variablen für die Verarbeitung
     Dim CurrentFahrrad As Fahrrad
+    Dim FlagLeft As Boolean
+    Dim FlagRight As Boolean
 
 
     'GroupBox1 Funktionen
@@ -63,8 +66,8 @@
         setGeschw()
     End Sub
 
-    Sub setGeschw()
-        'Hier wird die Geschwindigkeit hochgezählt
+    Public Sub setGeschw()
+        'Hier wird die Geschwindigkeit runter gezählt
         While CurrentFahrrad.Geschwindigkeit < ((CurrentFahrrad.FMaxGeschw / (CurrentFahrrad.FKettenblaetter * CurrentFahrrad.FRitzel)) * CurrentFahrrad.CurrentRitze * CurrentFahrrad.CurrentKette)
             CurrentFahrrad.Geschwindigkeit += 0.1
             GeschwAnzeige.Text = $"{CurrentFahrrad.Geschwindigkeit.ToString("F1")} km/h"
@@ -72,7 +75,7 @@
             System.Threading.Thread.Sleep(25)
         End While
 
-        'Hier wird die Geschwindigkeit hochgezählt 
+        'Hier wird die Geschwindigkeit runter gezählt 
         While CurrentFahrrad.Geschwindigkeit > (((CurrentFahrrad.FMaxGeschw / (CurrentFahrrad.FKettenblaetter * CurrentFahrrad.FRitzel)) * CurrentFahrrad.CurrentKette * CurrentFahrrad.CurrentRitze) + 1)
             CurrentFahrrad.Geschwindigkeit -= 0.1
             GeschwAnzeige.Text = $"{CurrentFahrrad.Geschwindigkeit.ToString("F1")} km/h"
@@ -114,6 +117,57 @@
             KetteAnzeige.Text = CurrentFahrrad.CurrentKette
             KetteAnzeige.Refresh()
             setGeschw()
+        End If
+    End Sub
+
+    Private Sub Blink_Left(ByVal sender As Object, ByVal e As EventArgs) Handles BlinkLinks.Click
+        FlagRight = False
+        FlagLeft = True
+        BlinkRightBox.Visible = False
+        Blink("left")
+    End Sub
+
+    Private Sub Blink_Right(sender As Object, e As EventArgs) Handles BlinkRechts.Click
+        FlagLeft = False
+        FlagRight = True
+        BlinkLeftBox.Visible = False
+        Blink("right")
+    End Sub
+
+
+
+    Private Async Sub Blink(left_right As String)
+        Dim i = 0
+        While i < 120
+            If left_right = "right" And FlagRight Then
+                If BlinkRightBox.Visible Then
+                    BlinkRightBox.Hide()
+                Else
+                    BlinkRightBox.Show()
+                End If
+            ElseIf left_right = "left" And FlagLeft Then
+                If BlinkLeftBox.Visible Then
+                    BlinkLeftBox.Hide()
+                Else
+                    BlinkLeftBox.Show()
+                End If
+            End If
+
+            i += 1
+            Await Task.Delay(250)
+        End While
+    End Sub
+
+
+    Private Sub lala(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles Me.KeyPress
+        If Asc(e.KeyChar) = 97 Or Asc(e.KeyChar) = 65 Then
+            Label1.Visible = False
+        End If
+    End Sub
+
+    Public Sub Textox1_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles Label1.KeyPress
+        If (e.KeyCode < Keys.D0 And e.KeyCode > Keys.D9) Then
+            Label1.Visible = False
         End If
     End Sub
 End Class

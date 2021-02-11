@@ -33,9 +33,9 @@ Partial Class Form1
         Me.Mountain_PB = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.WarningSignal = New System.Windows.Forms.PictureBox()
+        Me.BlinkLeftBox = New System.Windows.Forms.PictureBox()
+        Me.BlinkRightBox = New System.Windows.Forms.PictureBox()
         Me.los_fahren = New System.Windows.Forms.Button()
         Me.RunterRitze = New System.Windows.Forms.Button()
         Me.HochRitze = New System.Windows.Forms.Button()
@@ -53,15 +53,16 @@ Partial Class Form1
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.FahrradName = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.Crosser_PB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Rennrad_PB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Triathlon_PB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Mountain_PB, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.WarningSignal, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BlinkLeftBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BlinkRightBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Crosser_B
@@ -187,9 +188,10 @@ Partial Class Form1
         Me.GroupBox2.BackColor = System.Drawing.Color.White
         Me.GroupBox2.BackgroundImage = CType(resources.GetObject("GroupBox2.BackgroundImage"), System.Drawing.Image)
         Me.GroupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.GroupBox2.Controls.Add(Me.PictureBox3)
-        Me.GroupBox2.Controls.Add(Me.PictureBox2)
-        Me.GroupBox2.Controls.Add(Me.PictureBox1)
+        Me.GroupBox2.Controls.Add(Me.Label1)
+        Me.GroupBox2.Controls.Add(Me.WarningSignal)
+        Me.GroupBox2.Controls.Add(Me.BlinkLeftBox)
+        Me.GroupBox2.Controls.Add(Me.BlinkRightBox)
         Me.GroupBox2.Controls.Add(Me.los_fahren)
         Me.GroupBox2.Controls.Add(Me.RunterRitze)
         Me.GroupBox2.Controls.Add(Me.HochRitze)
@@ -214,41 +216,41 @@ Partial Class Form1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Visible = False
         '
-        'PictureBox3
+        'WarningSignal
         '
-        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox3.BackgroundImage = CType(resources.GetObject("PictureBox3.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox3.Location = New System.Drawing.Point(259, 265)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(100, 50)
-        Me.PictureBox3.TabIndex = 22
-        Me.PictureBox3.TabStop = False
-        Me.PictureBox3.Visible = False
+        Me.WarningSignal.BackColor = System.Drawing.Color.Transparent
+        Me.WarningSignal.BackgroundImage = CType(resources.GetObject("WarningSignal.BackgroundImage"), System.Drawing.Image)
+        Me.WarningSignal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.WarningSignal.Location = New System.Drawing.Point(259, 265)
+        Me.WarningSignal.Name = "WarningSignal"
+        Me.WarningSignal.Size = New System.Drawing.Size(100, 50)
+        Me.WarningSignal.TabIndex = 22
+        Me.WarningSignal.TabStop = False
+        Me.WarningSignal.Visible = False
         '
-        'PictureBox2
+        'BlinkLeftBox
         '
-        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox2.BackgroundImage = CType(resources.GetObject("PictureBox2.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox2.Location = New System.Drawing.Point(6, 184)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(101, 41)
-        Me.PictureBox2.TabIndex = 21
-        Me.PictureBox2.TabStop = False
-        Me.PictureBox2.Visible = False
+        Me.BlinkLeftBox.BackColor = System.Drawing.Color.Transparent
+        Me.BlinkLeftBox.BackgroundImage = CType(resources.GetObject("BlinkLeftBox.BackgroundImage"), System.Drawing.Image)
+        Me.BlinkLeftBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BlinkLeftBox.Location = New System.Drawing.Point(6, 184)
+        Me.BlinkLeftBox.Name = "BlinkLeftBox"
+        Me.BlinkLeftBox.Size = New System.Drawing.Size(101, 41)
+        Me.BlinkLeftBox.TabIndex = 21
+        Me.BlinkLeftBox.TabStop = False
+        Me.BlinkLeftBox.Visible = False
         '
-        'PictureBox1
+        'BlinkRightBox
         '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(510, 184)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(112, 37)
-        Me.PictureBox1.TabIndex = 20
-        Me.PictureBox1.TabStop = False
-        Me.PictureBox1.Visible = False
+        Me.BlinkRightBox.BackColor = System.Drawing.Color.Transparent
+        Me.BlinkRightBox.BackgroundImage = CType(resources.GetObject("BlinkRightBox.BackgroundImage"), System.Drawing.Image)
+        Me.BlinkRightBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BlinkRightBox.Location = New System.Drawing.Point(510, 184)
+        Me.BlinkRightBox.Name = "BlinkRightBox"
+        Me.BlinkRightBox.Size = New System.Drawing.Size(112, 37)
+        Me.BlinkRightBox.TabIndex = 20
+        Me.BlinkRightBox.TabStop = False
+        Me.BlinkRightBox.Visible = False
         '
         'los_fahren
         '
@@ -463,6 +465,15 @@ Partial Class Form1
         Me.FahrradName.Text = "Fahrrad"
         Me.FahrradName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(299, 403)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(41, 15)
+        Me.Label1.TabIndex = 23
+        Me.Label1.Text = "Label1"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -479,9 +490,9 @@ Partial Class Form1
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WarningSignal, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BlinkLeftBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BlinkRightBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -513,8 +524,9 @@ Partial Class Form1
     Friend WithEvents BlinkLinks As Button
     Friend WithEvents GeschwAnzeige As Label
     Friend WithEvents RitzelAnzeige As Label
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents BlinkLeftBox As PictureBox
+    Friend WithEvents BlinkRightBox As PictureBox
+    Friend WithEvents WarningSignal As PictureBox
     Friend WithEvents los_fahren As Button
+    Friend WithEvents Label1 As Label
 End Class
