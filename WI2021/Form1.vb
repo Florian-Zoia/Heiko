@@ -5,6 +5,7 @@
     Dim Crosser As Fahrrad = New Fahrrad("Crosser", 2, 11, 55, 0, 1, 1)
     Dim Triathlon As Fahrrad = New Fahrrad("Triathlon Rad", 2, 11, 65, 0, 1, 1)
     Dim Mountainbike As Fahrrad = New Fahrrad("Mountainbike", 1, 11, 55, 0, 1, 1)
+    Dim blabla As Fahrrad = New Fahrrad("huen", 5, 1, 65, 0, 1, 1)
 
     'Lokale Variablen für die Verarbeitung
     Dim CurrentFahrrad As Fahrrad
@@ -137,37 +138,32 @@
 
 
     Private Async Sub Blink(left_right As String)
-        Dim i = 0
-        While i < 120
-            If left_right = "right" And FlagRight Then
-                If BlinkRightBox.Visible Then
+        Dim i = 0                                                   'Funktionsvariable um die Schleife steuern zu können 
+        While i < 120                                               'While Schleife, um die Blinker aufblinken zu lassen 
+            If left_right = "right" And FlagRight Then              'If Anweisung, um zu entscheiden ob der linke oder rechte Blinker blinkt (Flag steuert, ob der Blinker stoppt, wenn die andere Richtung geklickt wird
+                If BlinkRightBox.Visible Then                       'Hier wird die PictureBox sichtbar gemacht um den Blinker sehen zu können 
                     BlinkRightBox.Hide()
                 Else
-                    BlinkRightBox.Show()
+                    BlinkRightBox.Show()                            'Hier wird die PictureBox unsichtbar gemacht, um den Blinker nicht mehr sehen zu können
                 End If
-            ElseIf left_right = "left" And FlagLeft Then
-                If BlinkLeftBox.Visible Then
+            ElseIf left_right = "left" And FlagLeft Then            'If Anweisung, um zu entscheiden ob der linke oder rechte Blinker blinkt (Flag steuert, ob der Blinker stoppt, wenn die andere Richtung geklickt wird
+                If BlinkLeftBox.Visible Then                        'Hier wird die PictureBox sichtbar gemacht um den Blinker sehen zu können 
                     BlinkLeftBox.Hide()
                 Else
-                    BlinkLeftBox.Show()
+                    BlinkLeftBox.Show()                             'Hier wird die PictureBox unsichtbar gemacht, um den Blinker nicht mehr sehen zu können
                 End If
             End If
 
-            i += 1
-            Await Task.Delay(250)
+            i += 1                                                  'Variable hochzählen, damit die While Schleife auch mal stoppt 
+            Await Task.Delay(250)                                   'Die Funktion pausieren, damit der Blinker überhaupt sichtbar ist
         End While
     End Sub
 
 
-    Private Sub lala(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles Me.KeyPress
-        If Asc(e.KeyChar) = 97 Or Asc(e.KeyChar) = 65 Then
-            Label1.Visible = False
-        End If
-    End Sub
-
-    Public Sub Textox1_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles Label1.KeyPress
-        If (e.KeyCode < Keys.D0 And e.KeyCode > Keys.D9) Then
-            Label1.Visible = False
-        End If
+    Private Sub Zurueck_Button(sender As Object, e As EventArgs) Handles Zurueck.Click  'Der Zurück Button 
+        CurrentFahrrad.Geschwindigkeit = 0      'Hier wird die Geschwindigkeit auf 0 gesetzt, damit sie wieder von null startet, wenn man das Fahrrad wechselt 
+        CurrentFahrrad = Nothing                'Hier wird das Fahrrad wieder auf Null gesetzt, damit keine Fehler entstehen können  
+        GroupBox2.Visible = False               'Hier wird die 2. Ansicht auf unsichtbar geschaltet
+        GroupBox1.Visible = True                'Hier wird die 1. Ansicht wieder Sichtbar geschaltet 
     End Sub
 End Class

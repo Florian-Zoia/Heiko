@@ -33,6 +33,7 @@ Partial Class Form1
         Me.Mountain_PB = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Zurueck = New System.Windows.Forms.Button()
         Me.WarningSignal = New System.Windows.Forms.PictureBox()
         Me.BlinkLeftBox = New System.Windows.Forms.PictureBox()
         Me.BlinkRightBox = New System.Windows.Forms.PictureBox()
@@ -53,7 +54,6 @@ Partial Class Form1
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.FahrradName = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.Crosser_PB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Rennrad_PB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Triathlon_PB, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -188,7 +188,7 @@ Partial Class Form1
         Me.GroupBox2.BackColor = System.Drawing.Color.White
         Me.GroupBox2.BackgroundImage = CType(resources.GetObject("GroupBox2.BackgroundImage"), System.Drawing.Image)
         Me.GroupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.GroupBox2.Controls.Add(Me.Label1)
+        Me.GroupBox2.Controls.Add(Me.Zurueck)
         Me.GroupBox2.Controls.Add(Me.WarningSignal)
         Me.GroupBox2.Controls.Add(Me.BlinkLeftBox)
         Me.GroupBox2.Controls.Add(Me.BlinkRightBox)
@@ -215,6 +215,19 @@ Partial Class Form1
         Me.GroupBox2.TabIndex = 8
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Visible = False
+        '
+        'Zurueck
+        '
+        Me.Zurueck.BackColor = System.Drawing.Color.Black
+        Me.Zurueck.FlatAppearance.BorderSize = 0
+        Me.Zurueck.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Zurueck.ForeColor = System.Drawing.Color.White
+        Me.Zurueck.Location = New System.Drawing.Point(32, 13)
+        Me.Zurueck.Name = "Zurueck"
+        Me.Zurueck.Size = New System.Drawing.Size(75, 23)
+        Me.Zurueck.TabIndex = 23
+        Me.Zurueck.Text = "Zurück"
+        Me.Zurueck.UseVisualStyleBackColor = False
         '
         'WarningSignal
         '
@@ -356,11 +369,11 @@ Partial Class Form1
         Me.GeschwAnzeige.BackColor = System.Drawing.Color.Black
         Me.GeschwAnzeige.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.GeschwAnzeige.ForeColor = System.Drawing.Color.White
-        Me.GeschwAnzeige.Location = New System.Drawing.Point(299, 145)
+        Me.GeschwAnzeige.Location = New System.Drawing.Point(269, 145)
         Me.GeschwAnzeige.Name = "GeschwAnzeige"
-        Me.GeschwAnzeige.Size = New System.Drawing.Size(24, 28)
+        Me.GeschwAnzeige.Size = New System.Drawing.Size(80, 28)
         Me.GeschwAnzeige.TabIndex = 9
-        Me.GeschwAnzeige.Text = "0"
+        Me.GeschwAnzeige.Text = "0 km/h"
         Me.GeschwAnzeige.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'RitzelAnzeige
@@ -465,15 +478,6 @@ Partial Class Form1
         Me.FahrradName.Text = "Fahrrad"
         Me.FahrradName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(299, 403)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(41, 15)
-        Me.Label1.TabIndex = 23
-        Me.Label1.Text = "Label1"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -528,5 +532,5 @@ Partial Class Form1
     Friend WithEvents BlinkRightBox As PictureBox
     Friend WithEvents WarningSignal As PictureBox
     Friend WithEvents los_fahren As Button
-    Friend WithEvents Label1 As Label
+    Friend WithEvents Zurueck As Button
 End Class
