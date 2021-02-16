@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Crosser_B = New System.Windows.Forms.Button()
@@ -47,8 +47,8 @@ Partial Class Form1
         Me.GeschwAnzeige = New System.Windows.Forms.Label()
         Me.RitzelAnzeige = New System.Windows.Forms.Label()
         Me.KetteAnzeige = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.DrZhl = New System.Windows.Forms.Label()
+        Me.Herz = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -202,8 +202,8 @@ Partial Class Form1
         Me.GroupBox2.Controls.Add(Me.GeschwAnzeige)
         Me.GroupBox2.Controls.Add(Me.RitzelAnzeige)
         Me.GroupBox2.Controls.Add(Me.KetteAnzeige)
-        Me.GroupBox2.Controls.Add(Me.Label7)
-        Me.GroupBox2.Controls.Add(Me.Label6)
+        Me.GroupBox2.Controls.Add(Me.DrZhl)
+        Me.GroupBox2.Controls.Add(Me.Herz)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.Label3)
@@ -381,7 +381,7 @@ Partial Class Form1
         Me.RitzelAnzeige.AutoSize = True
         Me.RitzelAnzeige.BackColor = System.Drawing.Color.Black
         Me.RitzelAnzeige.ForeColor = System.Drawing.Color.White
-        Me.RitzelAnzeige.Location = New System.Drawing.Point(581, 134)
+        Me.RitzelAnzeige.Location = New System.Drawing.Point(558, 134)
         Me.RitzelAnzeige.Name = "RitzelAnzeige"
         Me.RitzelAnzeige.Size = New System.Drawing.Size(13, 15)
         Me.RitzelAnzeige.TabIndex = 8
@@ -392,40 +392,40 @@ Partial Class Form1
         Me.KetteAnzeige.AutoSize = True
         Me.KetteAnzeige.BackColor = System.Drawing.Color.Black
         Me.KetteAnzeige.ForeColor = System.Drawing.Color.White
-        Me.KetteAnzeige.Location = New System.Drawing.Point(581, 101)
+        Me.KetteAnzeige.Location = New System.Drawing.Point(558, 101)
         Me.KetteAnzeige.Name = "KetteAnzeige"
         Me.KetteAnzeige.Size = New System.Drawing.Size(13, 15)
         Me.KetteAnzeige.TabIndex = 7
         Me.KetteAnzeige.Text = "1"
         '
-        'Label7
+        'DrZhl
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Black
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(581, 68)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(13, 15)
-        Me.Label7.TabIndex = 6
-        Me.Label7.Text = "0"
+        Me.DrZhl.AutoSize = True
+        Me.DrZhl.BackColor = System.Drawing.Color.Black
+        Me.DrZhl.ForeColor = System.Drawing.Color.White
+        Me.DrZhl.Location = New System.Drawing.Point(558, 68)
+        Me.DrZhl.Name = "DrZhl"
+        Me.DrZhl.Size = New System.Drawing.Size(50, 15)
+        Me.DrZhl.TabIndex = 6
+        Me.DrZhl.Text = "0 U/min"
         '
-        'Label6
+        'Herz
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.Black
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(581, 33)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(13, 15)
-        Me.Label6.TabIndex = 5
-        Me.Label6.Text = "0"
+        Me.Herz.AutoSize = True
+        Me.Herz.BackColor = System.Drawing.Color.Black
+        Me.Herz.ForeColor = System.Drawing.Color.White
+        Me.Herz.Location = New System.Drawing.Point(558, 33)
+        Me.Herz.Name = "Herz"
+        Me.Herz.Size = New System.Drawing.Size(19, 15)
+        Me.Herz.TabIndex = 5
+        Me.Herz.Text = "90"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Black
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(517, 134)
+        Me.Label5.Location = New System.Drawing.Point(501, 134)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(35, 15)
         Me.Label5.TabIndex = 4
@@ -436,7 +436,7 @@ Partial Class Form1
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Black
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(518, 101)
+        Me.Label4.Location = New System.Drawing.Point(502, 101)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(34, 15)
         Me.Label4.TabIndex = 3
@@ -447,7 +447,7 @@ Partial Class Form1
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Black
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(462, 68)
+        Me.Label3.Location = New System.Drawing.Point(446, 68)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(90, 15)
         Me.Label3.TabIndex = 2
@@ -459,7 +459,7 @@ Partial Class Form1
         Me.Label2.BackColor = System.Drawing.Color.Black
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(438, 33)
+        Me.Label2.Location = New System.Drawing.Point(422, 33)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(114, 15)
         Me.Label2.TabIndex = 1
@@ -511,8 +511,8 @@ Partial Class Form1
     Friend WithEvents Mountain_PB As PictureBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label6 As Label
+    Friend WithEvents DrZhl As Label
+    Friend WithEvents Herz As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label

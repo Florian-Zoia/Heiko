@@ -11,6 +11,9 @@
     Dim CurrentFahrrad As Fahrrad
     Dim FlagLeft As Boolean
     Dim FlagRight As Boolean
+    Dim Herzfrequenz As Integer = 90
+    Dim Drehzahl As Double
+    Public Const PI As Double = 3.1415926535897931
 
 
     'GroupBox1 Funktionen
@@ -65,6 +68,8 @@
     'GroupBox2 
     Private Sub LosFahren(sender As Object, e As EventArgs) Handles los_fahren.Click
         setGeschw()
+        HerzfrequenzSub()                           'Die Herzfrequenz wird angefangen hoch zu zählen 
+        DrehzahlSub()                               'Die Drehzahl wird angefangen hoch zu zählen 
     End Sub
 
     Public Sub setGeschw()
@@ -73,6 +78,7 @@
             CurrentFahrrad.Geschwindigkeit += 0.1
             GeschwAnzeige.Text = $"{CurrentFahrrad.Geschwindigkeit.ToString("F1")} km/h"
             GeschwAnzeige.Refresh()
+            DrehzahlSub()
             System.Threading.Thread.Sleep(25)
         End While
 
@@ -81,6 +87,7 @@
             CurrentFahrrad.Geschwindigkeit -= 0.1
             GeschwAnzeige.Text = $"{CurrentFahrrad.Geschwindigkeit.ToString("F1")} km/h"
             GeschwAnzeige.Refresh()
+            DrehzahlSub()
             System.Threading.Thread.Sleep(25)
         End While
     End Sub
@@ -161,9 +168,42 @@
 
 
     Private Sub Zurueck_Button(sender As Object, e As EventArgs) Handles Zurueck.Click  'Der Zurück Button 
-        CurrentFahrrad.Geschwindigkeit = 0      'Hier wird die Geschwindigkeit auf 0 gesetzt, damit sie wieder von null startet, wenn man das Fahrrad wechselt 
-        CurrentFahrrad = Nothing                'Hier wird das Fahrrad wieder auf Null gesetzt, damit keine Fehler entstehen können  
-        GroupBox2.Visible = False               'Hier wird die 2. Ansicht auf unsichtbar geschaltet
-        GroupBox1.Visible = True                'Hier wird die 1. Ansicht wieder Sichtbar geschaltet 
+        CurrentFahrrad.Geschwindigkeit = 0                                          'Hier wird die Geschwindigkeit auf 0 gesetzt, damit sie wieder von null startet, wenn man das Fahrrad wechselt 
+        GeschwAnzeige.Text = $"{CurrentFahrrad.Geschwindigkeit.ToString("F1")}"     'Hier wird der Text für die Geschwindigkeit auf 0 gesetzt
+        CurrentFahrrad = Nothing                                                    'Hier wird das Fahrrad wieder auf Null gesetzt, damit keine Fehler entstehen können  
+        GroupBox2.Visible = False                                                   'Hier wird die 2. Ansicht auf unsichtbar geschaltet
+        GroupBox1.Visible = True                                                    'Hier wird die 1. Ansicht wieder Sichtbar geschaltet 
+        Herzfrequenz = 90                                                           'Hier wird die Herzfrequenz zurückgesetzt 
+        Herz.Text = $"{Herzfrequenz.ToString("F1")}"                                'Hier wird der Text für die Herzfrequnz neu gesetzt 
+        Drehzahl = 0                                                                'Hier wird die Drehzahl zurückgesetzt
+        DrZhl.Text = $"{Drehzahl.ToString("F1")}"                                   'Hier wird der Text für die Drehzahl neu gesetzt 
+    End Sub
+
+    Private Async Sub HerzfrequenzSub()                                         'Hier wird die Herzfrequenz ausgerechnet und gesetzt 
+        While True
+            If Herzfrequenz < 135 Then
+                Dim rndmNrSmall As Integer = CInt(Int((3 * Rnd()) + 1))
+                Herzfrequenz += rndmNrSmall
+                Herz.Text = $"{Herzfrequenz.ToString("F1")}"
+            ElseIf Herzfrequenz >= 135 And Herzfrequenz <= 150 Then
+                Dim rndmNrLarge As Integer = CInt(Int((5 * Rnd()) + 1))
+                Dim addSubstract As Integer = CInt(Int((2 * Rnd()) + 1))
+                If addSubstract = 1 Then
+                    Herzfrequenz -= rndmNrLarge
+                    Herz.Text = $"{Herzfrequenz.ToString("F1")}"
+                ElseIf addSubstract = 2 Then
+                    Herzfrequenz += rndmNrLarge
+                    Herz.Text = $"{Herzfrequenz.ToString("F1")}"
+                End If
+            End If
+            Await Task.Delay(5000)
+        End While
+    End Sub
+
+    Private Sub DrehzahlSub()
+        Dim meterSek As Double = CurrentFahrrad.Geschwindigkeit / 3.6
+        Drehzahl = (meterSek / (2 * 0.3175 * PI)) * 60
+        DrZhl.Text = $"{Drehzahl.ToString("F1")} U/min"
+        DrZhl.Refresh()
     End Sub
 End Class
