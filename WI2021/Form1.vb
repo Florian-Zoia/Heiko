@@ -1,19 +1,18 @@
 ﻿Public Class Form1
 
     'Objekte (Fahrräder)
-    Dim Rennrad As Fahrrad = New Fahrrad("Rennrad", 2, 10, 65, 0, 1, 1)
-    Dim Crosser As Fahrrad = New Fahrrad("Crosser", 2, 11, 55, 0, 1, 1)
-    Dim Triathlon As Fahrrad = New Fahrrad("Triathlon Rad", 2, 11, 65, 0, 1, 1)
-    Dim Mountainbike As Fahrrad = New Fahrrad("Mountainbike", 1, 11, 55, 0, 1, 1)
-    Dim blabla As Fahrrad = New Fahrrad("huen", 5, 1, 65, 0, 1, 1)
+    Dim Rennrad As Fahrrad = New Fahrrad("Rennrad", 2, 10, 65, 0, 1, 1)                     'Hier wird das Objekt Rennrad mit den entsprechenden Attributen erstellt 
+    Dim Crosser As Fahrrad = New Fahrrad("Crosser", 2, 11, 55, 0, 1, 1)                     'Hier wird das Objekt Crosser mit den entsprechnenden Attributen erstellt 
+    Dim Triathlon As Fahrrad = New Fahrrad("Triathlon Rad", 2, 11, 65, 0, 1, 1)             'Hier wird das Objekt Triathlon Rad mit den entsprechenden Attributen erstellt 
+    Dim Mountainbike As Fahrrad = New Fahrrad("Mountainbike", 1, 11, 55, 0, 1, 1)           'Hier wird das Objekt Mountainbike mit den entsprechenden Attributen erstellt 
 
     'Lokale Variablen für die Verarbeitung
-    Dim CurrentFahrrad As Fahrrad
-    Dim FlagLeft As Boolean
-    Dim FlagRight As Boolean
-    Dim Herzfrequenz As Integer = 90
-    Dim Drehzahl As Double
-    Public Const PI As Double = 3.1415926535897931
+    Dim CurrentFahrrad As Fahrrad                               'Hier wird das in der ersten Ansicht ausgewählte Fahrrad zwischengespeichert um damit zu arbeiten 
+    Dim FlagLeft As Boolean                                     'Dies ist eine Flag um den Linksblinker aktivieren zu können 
+    Dim FlagRight As Boolean                                    'Dies ist eine Flag um den Rechtsblinker aktivieren zu können 
+    Dim Herzfrequenz As Integer = 90                            'Dies ist die Variable für die Herzfrequenz
+    Dim Drehzahl As Double                                      'Dies ist die Variable für die Drezahl 
+    Public Const PI As Double = 3.1415926535897931              'Dies ist die Konstante Pi, damit die Drezhahl ausgerechnet werden kann 
 
 
     'GroupBox1 Funktionen
@@ -69,11 +68,10 @@
     Private Sub LosFahren(sender As Object, e As EventArgs) Handles los_fahren.Click
         setGeschw()
         HerzfrequenzSub()                           'Die Herzfrequenz wird angefangen hoch zu zählen 
-        DrehzahlSub()                               'Die Drehzahl wird angefangen hoch zu zählen 
     End Sub
 
     Public Sub setGeschw()
-        'Hier wird die Geschwindigkeit runter gezählt
+        'Hier wird die Geschwindigkeit runter gezählt,
         While CurrentFahrrad.Geschwindigkeit < ((CurrentFahrrad.FMaxGeschw / (CurrentFahrrad.FKettenblaetter * CurrentFahrrad.FRitzel)) * CurrentFahrrad.CurrentRitze * CurrentFahrrad.CurrentKette)
             CurrentFahrrad.Geschwindigkeit += 0.1
             GeschwAnzeige.Text = $"{CurrentFahrrad.Geschwindigkeit.ToString("F1")} km/h"
@@ -92,54 +90,54 @@
         End While
     End Sub
 
-    Private Sub Hochschalten_Ritze(sender As Object, e As EventArgs) Handles HochRitze.Click
-        If CurrentFahrrad.CurrentRitze < CurrentFahrrad.FRitzel Then
-            CurrentFahrrad.CurrentRitze += 1
-            RitzelAnzeige.Text = CurrentFahrrad.CurrentRitze
-            RitzelAnzeige.Refresh()
-            setGeschw()
+    Private Sub Hochschalten_Ritze(sender As Object, e As EventArgs) Handles HochRitze.Click            'Hier wird die Ritze hochgeschalten 
+        If CurrentFahrrad.CurrentRitze < CurrentFahrrad.FRitzel Then                                    'Die Ritze kann nur hochgeschalten werden solgange sie kleiner ist als das Fahrrad Ritzel hat 
+            CurrentFahrrad.CurrentRitze += 1                                                            'Hier wird die Ritze neu berechent 
+            RitzelAnzeige.Text = CurrentFahrrad.CurrentRitze                                            'Hier wird der Text für die Ritze neu gesetzt 
+            RitzelAnzeige.Refresh()                                                                     'Hier wird die Anzeige der Ritze aktualisiert 
+            setGeschw()                                                                                 'Hier wird die Geschwindigkeit neu berechnet 
         End If
     End Sub
 
-    Private Sub Runterschalten_Ritze(sender As Object, e As EventArgs) Handles RunterRitze.Click
-        If CurrentFahrrad.CurrentRitze > 1 Then
-            CurrentFahrrad.CurrentRitze -= 1
-            RitzelAnzeige.Text = CurrentFahrrad.CurrentRitze
-            RitzelAnzeige.Refresh()
-            setGeschw()
+    Private Sub Runterschalten_Ritze(sender As Object, e As EventArgs) Handles RunterRitze.Click        'Hier wird die Ritze runter geschaltet 
+        If CurrentFahrrad.CurrentRitze > 1 Then                                                         'Die Ritze kann nur runtergeschalten werden solangen sie größer ist als 1 
+            CurrentFahrrad.CurrentRitze -= 1                                                            'Hier wird die Ritze neu berechnet 
+            RitzelAnzeige.Text = CurrentFahrrad.CurrentRitze                                            'Hier wird der Text für die Ritze neu gesetzt 
+            RitzelAnzeige.Refresh()                                                                     'Hier wird die Anzeige für die Ritze aktualisiert 
+            setGeschw()                                                                                 'Hier wird die Geschwindigkeit entsprechend der neuen Kette und Ritze berechnet 
         End If
     End Sub
 
-    Private Sub Hochschalten_Kette(sender As Object, e As EventArgs) Handles HochKette.Click
-        If CurrentFahrrad.CurrentKette < CurrentFahrrad.FKettenblaetter Then
-            CurrentFahrrad.CurrentKette += 1
-            KetteAnzeige.Text = CurrentFahrrad.CurrentKette
-            KetteAnzeige.Refresh()
-            setGeschw()
+    Private Sub Hochschalten_Kette(sender As Object, e As EventArgs) Handles HochKette.Click        'Hier wird die Kette hochgeschaltet 
+        If CurrentFahrrad.CurrentKette < CurrentFahrrad.FKettenblaetter Then                        'Die Kette kann nur hochgeschaltet werdeon solange sie kleiner ist als das Fahrrad Kettenblätter hat 
+            CurrentFahrrad.CurrentKette += 1                                                        'Hier wird die Kette hochgezähtl 
+            KetteAnzeige.Text = CurrentFahrrad.CurrentKette                                         'Hier wird der Text für die Kette neu gesetzt
+            KetteAnzeige.Refresh()                                                                  'Hier wird die Anzeige für die Kette aktualisiert um den richtigen Wert anzuzeigen 
+            setGeschw()                                                                             'Hier wird die Geschwindigkeit entsprechend der Kette und Ritze neu berechnet 
         End If
     End Sub
 
-    Private Sub Runterschalten_Kette(sender As Object, e As EventArgs) Handles RunterKette.Click
-        If CurrentFahrrad.CurrentKette > 1 Then
-            CurrentFahrrad.CurrentKette -= 1
-            KetteAnzeige.Text = CurrentFahrrad.CurrentKette
-            KetteAnzeige.Refresh()
-            setGeschw()
+    Private Sub Runterschalten_Kette(sender As Object, e As EventArgs) Handles RunterKette.Click    'Hier wird die Kette runtergeschalten 
+        If CurrentFahrrad.CurrentKette > 1 Then                                                     'Die Kette kann nur runtergeschalten werden solange sie größer ist als 1 
+            CurrentFahrrad.CurrentKette -= 1                                                        'Hier wird die Kette runter gezählt 
+            KetteAnzeige.Text = CurrentFahrrad.CurrentKette                                         'Hier wird der Text für die Kette neu gesetzt
+            KetteAnzeige.Refresh()                                                                  'Hier wird die Anzeige für die Kette geändert 
+            setGeschw()                                                                             'Die gefahrene Geschwindigkeit wird neu berechnet entsprechend der Kette und der Ritze 
         End If
     End Sub
 
-    Private Sub Blink_Left(ByVal sender As Object, ByVal e As EventArgs) Handles BlinkLinks.Click
-        FlagRight = False
-        FlagLeft = True
-        BlinkRightBox.Visible = False
-        Blink("left")
+    Private Sub Blink_Left(ByVal sender As Object, ByVal e As EventArgs) Handles BlinkLinks.Click   'Hier wird der Button Klick erkannt wenn rechts geblinkt werden soll 
+        FlagRight = False                                                                           'Die Flag für den Rechts Blinker wird auf False gesetzt, damit dieser nicht mehr blinkt 
+        FlagLeft = True                                                                             'Die Flag für den Links Blinker wird auf True gesetzt, damit dieser anfangen kann zu blinken 
+        BlinkRightBox.Visible = False                                                               'Der Rechtsblinker wird auf unsichtbar gesetzt, damit man diesen nicht mehr sieht 
+        Blink("left")                                                                               'Die Blinkerfunktion wird aufgerufen
     End Sub
 
-    Private Sub Blink_Right(sender As Object, e As EventArgs) Handles BlinkRechts.Click
-        FlagLeft = False
-        FlagRight = True
-        BlinkLeftBox.Visible = False
-        Blink("right")
+    Private Sub Blink_Right(sender As Object, e As EventArgs) Handles BlinkRechts.Click             'Hier wird der Button Klick erkannt wenn rechts geblinkt werden soll 
+        FlagLeft = False                                                                            'Die Flag für den Links Blinker wird auf False gesetzt, damit dieser nicht mehr blinkt 
+        FlagRight = True                                                                            'Die Flag für den Rechts Blinker wird auf True gesetzt, damit dieser anfangen kann zu blinken 
+        BlinkLeftBox.Visible = False                                                                'Der Linksblinker wird auf unsichtbar gesetzt, damit man diesen nicht mehr sieht 
+        Blink("right")                                                                              'Die Blinkerfunktion wird aufgerufen
     End Sub
 
 
@@ -179,31 +177,31 @@
         DrZhl.Text = $"{Drehzahl.ToString("F1")}"                                   'Hier wird der Text für die Drehzahl neu gesetzt 
     End Sub
 
-    Private Async Sub HerzfrequenzSub()                                         'Hier wird die Herzfrequenz ausgerechnet und gesetzt 
-        While True
-            If Herzfrequenz < 135 Then
-                Dim rndmNrSmall As Integer = CInt(Int((3 * Rnd()) + 1))
-                Herzfrequenz += rndmNrSmall
-                Herz.Text = $"{Herzfrequenz.ToString("F1")}"
-            ElseIf Herzfrequenz >= 135 And Herzfrequenz <= 150 Then
-                Dim rndmNrLarge As Integer = CInt(Int((5 * Rnd()) + 1))
-                Dim addSubstract As Integer = CInt(Int((2 * Rnd()) + 1))
-                If addSubstract = 1 Then
-                    Herzfrequenz -= rndmNrLarge
-                    Herz.Text = $"{Herzfrequenz.ToString("F1")}"
-                ElseIf addSubstract = 2 Then
-                    Herzfrequenz += rndmNrLarge
-                    Herz.Text = $"{Herzfrequenz.ToString("F1")}"
+    Private Async Sub HerzfrequenzSub()                                                 'Hier wird die Herzfrequenz ausgerechnet und gesetzt 
+        While True                                                                      'Hier wird eine Endlosschleife gestartet, damit die Herzfrequenz dauerhaft hochgezählt wird
+            If Herzfrequenz < 135 Then                                                  'Hier wird die Herzfrequenz Immer hochgezählt, sofern sie unter 135 ist
+                Dim rndmNrSmall As Integer = CInt(Int((3 * Rnd()) + 1))                 'Hier wird eine Zurällige Zahl ziwschen 1 und 3 erzäugt die, verwendet wird um auf die Herzfrequenz zu addieren 
+                Herzfrequenz += rndmNrSmall                                             'Hier wird die Herzfrequenz erhöht 
+                Herz.Text = $"{Herzfrequenz.ToString("F1")}"                            'Hier wird die Herzfrequenz neu angezeigt 
+            ElseIf Herzfrequenz >= 135 And Herzfrequenz <= 150 Then                     'Hier wird geprüft ob die Herzfrequenz über/gleich 135 und niedriger ist als 150
+                Dim rndmNrLarge As Integer = CInt(Int((5 * Rnd()) + 1))                 'Hier wird eine zufällige Zahl zwischen 1 und 5 erzäugt um diese der Herzfrequenz hinzuzufügen oder abzuziehen 
+                Dim addSubstract As Integer = CInt(Int((2 * Rnd()) + 1))                'Hier wird eine zufällige Nummer zwischen 1 und 2 erzäugt, welche bestimmt ob die Herzfrequenz hoch oder runter geht
+                If addSubstract = 1 Then                                                'Ist die Zufällige Nummer 1 so wird die Herzfrequenz gesängt 
+                    Herzfrequenz -= rndmNrLarge                                         'Hier wird die Herzfrequenz runter gezählt mit der zufälligen Nummer 1-5
+                    Herz.Text = $"{Herzfrequenz.ToString("F1")}"                        'Hier wird die neue Herzfrequenz angezeigt 
+                ElseIf addSubstract = 2 Then                                            'Ist die Zufällige Nummer 2, so wird die Herzfrequenz hoch gezählt 
+                    Herzfrequenz += rndmNrLarge                                         'Hier wird die Herzfrequenz hochgezählt 
+                    Herz.Text = $"{Herzfrequenz.ToString("F1")}"                        'Hier wird die Herzfrequenz neu angezeigt 
                 End If
             End If
-            Await Task.Delay(5000)
+            Await Task.Delay(5000)                                                      'Hier wird die Schleife pausiert, damit sich die Herzfrequenz alle 5 Sekunden ändert
         End While
     End Sub
 
-    Private Sub DrehzahlSub()
-        Dim meterSek As Double = CurrentFahrrad.Geschwindigkeit / 3.6
-        Drehzahl = (meterSek / (2 * 0.3175 * PI)) * 60
-        DrZhl.Text = $"{Drehzahl.ToString("F1")} U/min"
-        DrZhl.Refresh()
+    Private Sub DrehzahlSub()                                                   'Hier wird die Drezhal bestimmt
+        Dim meterSek As Double = CurrentFahrrad.Geschwindigkeit / 3.6           'Hier wird die gefahrene Geschwindigkeit in m/s umgerechnet 
+        Drehzahl = (meterSek / (2 * 0.3175 * PI)) * 60                          'hier wird die Drezahl des Rades ausgerechnet   
+        DrZhl.Text = $"{Drehzahl.ToString("F1")} U/min"                         'Hier wird die Drehzahl neu angezeigt 
+        DrZhl.Refresh()                                                         'Hier wird die Anzeige für die Drehzahl neu geladen, damit die Anzeige auch richtig funktioniert 
     End Sub
 End Class
