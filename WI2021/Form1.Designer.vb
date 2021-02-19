@@ -54,7 +54,6 @@ Partial Class Form1
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.FahrradName = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.Crosser_PB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Rennrad_PB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Triathlon_PB, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -189,7 +188,6 @@ Partial Class Form1
         Me.GroupBox2.BackColor = System.Drawing.Color.White
         Me.GroupBox2.BackgroundImage = CType(resources.GetObject("GroupBox2.BackgroundImage"), System.Drawing.Image)
         Me.GroupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.Zurueck)
         Me.GroupBox2.Controls.Add(Me.WarningSignal)
         Me.GroupBox2.Controls.Add(Me.BlinkLeftBox)
@@ -480,15 +478,6 @@ Partial Class Form1
         Me.FahrradName.Text = "Fahrrad"
         Me.FahrradName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(294, 403)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(41, 15)
-        Me.Label1.TabIndex = 24
-        Me.Label1.Text = "Label1"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -544,5 +533,4 @@ Partial Class Form1
     Friend WithEvents WarningSignal As PictureBox
     Friend WithEvents los_fahren As Button
     Friend WithEvents Zurueck As Button
-    Friend WithEvents Label1 As Label
 End Class

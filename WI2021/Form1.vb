@@ -1,5 +1,7 @@
 ﻿Public Class Form1
 
+    Private Declare Function GetAsyncKeyState Lib "user32" (ByVal vKey As Integer) As Short
+
     'Objekte (Fahrräder)
     Dim Rennrad As Fahrrad = New Fahrrad("Rennrad", 2, 10, 65, 0, 1, 1)                     'Hier wird das Objekt Rennrad mit den entsprechenden Attributen erstellt 
     Dim Crosser As Fahrrad = New Fahrrad("Crosser", 2, 11, 55, 0, 1, 1)                     'Hier wird das Objekt Crosser mit den entsprechnenden Attributen erstellt 
@@ -195,6 +197,7 @@
                 End If
             End If
             Await Task.Delay(5000)                                                      'Hier wird die Schleife pausiert, damit sich die Herzfrequenz alle 5 Sekunden ändert
+            RadarFunction()
         End While
     End Sub
 
@@ -203,5 +206,20 @@
         Drehzahl = (meterSek / (2 * 0.3175 * PI)) * 60                          'hier wird die Drezahl des Rades ausgerechnet   
         DrZhl.Text = $"{Drehzahl.ToString("F1")} U/min"                         'Hier wird die Drehzahl neu angezeigt 
         DrZhl.Refresh()                                                         'Hier wird die Anzeige für die Drehzahl neu geladen, damit die Anzeige auch richtig funktioniert 
+    End Sub
+
+    Private Async Sub RadarFunction()
+        Dim i = 0
+        If (GetAsyncKeyState(65)) Then
+            While i < 80
+                If WarningSignal.Visible = True Then
+                    WarningSignal.Visible = False
+                Else
+                    WarningSignal.Visible = True
+                End If
+                i += 1
+                Await Task.Delay(250)
+            End While
+        End If
     End Sub
 End Class
