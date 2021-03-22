@@ -203,7 +203,6 @@
                 End If
             End If
             Await Task.Delay(5000)                                                      'Hier wird die Schleife pausiert, damit sich die Herzfrequenz alle 5 Sekunden ändert
-            RadarFunction()
         End While
     End Sub
 
@@ -212,6 +211,13 @@
         Drehzahl = (meterSek / (2 * 0.3175 * PI)) * 60                          'hier wird die Drezahl des Rades ausgerechnet   
         DrZhl.Text = $"{Drehzahl.ToString("F1")} U/min"                         'Hier wird die Drehzahl neu angezeigt 
         DrZhl.Refresh()                                                         'Hier wird die Anzeige für die Drehzahl neu geladen, damit die Anzeige auch richtig funktioniert 
+    End Sub
+
+    Private Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox1.KeyPress
+        If Asc(e.KeyChar) = 97 Or Asc(e.KeyChar) = 65 Then
+            TextBox1.Text = ""
+            RadarFunction()
+        End If
     End Sub
 
     Private Async Sub RadarFunction()
@@ -228,4 +234,5 @@
             End While
         End If
     End Sub
+
 End Class
