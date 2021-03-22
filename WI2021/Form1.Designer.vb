@@ -54,6 +54,7 @@ Partial Class Form1
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.FahrradName = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         CType(Me.Crosser_PB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Rennrad_PB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Triathlon_PB, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -188,6 +189,7 @@ Partial Class Form1
         Me.GroupBox2.BackColor = System.Drawing.Color.White
         Me.GroupBox2.BackgroundImage = CType(resources.GetObject("GroupBox2.BackgroundImage"), System.Drawing.Image)
         Me.GroupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.GroupBox2.Controls.Add(Me.TextBox1)
         Me.GroupBox2.Controls.Add(Me.Zurueck)
         Me.GroupBox2.Controls.Add(Me.WarningSignal)
         Me.GroupBox2.Controls.Add(Me.BlinkLeftBox)
@@ -234,7 +236,7 @@ Partial Class Form1
         Me.WarningSignal.BackColor = System.Drawing.Color.Transparent
         Me.WarningSignal.BackgroundImage = CType(resources.GetObject("WarningSignal.BackgroundImage"), System.Drawing.Image)
         Me.WarningSignal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.WarningSignal.Location = New System.Drawing.Point(259, 265)
+        Me.WarningSignal.Location = New System.Drawing.Point(259, 184)
         Me.WarningSignal.Name = "WarningSignal"
         Me.WarningSignal.Size = New System.Drawing.Size(100, 50)
         Me.WarningSignal.TabIndex = 22
@@ -478,6 +480,16 @@ Partial Class Form1
         Me.FahrradName.Text = "Fahrrad"
         Me.FahrradName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.Color.Black
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox1.ForeColor = System.Drawing.Color.White
+        Me.TextBox1.Location = New System.Drawing.Point(259, 287)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(100, 16)
+        Me.TextBox1.TabIndex = 24
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -533,4 +545,5 @@ Partial Class Form1
     Friend WithEvents WarningSignal As PictureBox
     Friend WithEvents los_fahren As Button
     Friend WithEvents Zurueck As Button
+    Friend WithEvents TextBox1 As TextBox
 End Class

@@ -15,6 +15,7 @@
     Dim Herzfrequenz As Integer = 90                            'Dies ist die Variable für die Herzfrequenz
     Dim Drehzahl As Double                                      'Dies ist die Variable für die Drezahl 
     Public Const PI As Double = 3.1415926535897931              'Dies ist die Konstante Pi, damit die Drezhahl ausgerechnet werden kann 
+    Dim AngGeschwindigkeit As Integer                           'Dies ist die Variable welche den Text von der Textbox übernimmt 
 
 
     'GroupBox1 Funktionen
@@ -68,13 +69,18 @@
 
     'GroupBox2 
     Private Sub LosFahren(sender As Object, e As EventArgs) Handles los_fahren.Click
-        setGeschw()
-        HerzfrequenzSub()                           'Die Herzfrequenz wird angefangen hoch zu zählen 
+        If IsNumeric(TextBox1.Text) Then
+            AngGeschwindigkeit = TextBox1.Text          'Die Geschwindigkeit wird gespeichert 
+            setGeschw()                                 'Die Geschwindigkeitsfunktion wird aufgerufen
+            HerzfrequenzSub()                           'Die Herzfrequenz wird angefangen hoch zu zählen 
+        Else
+            MsgBox("Bitte geben Sie eine Geschwindigkeit an.")
+        End If
     End Sub
 
     Public Sub setGeschw()
-        'Hier wird die Geschwindigkeit runter gezählt,
-        While CurrentFahrrad.Geschwindigkeit < ((CurrentFahrrad.FMaxGeschw / (CurrentFahrrad.FKettenblaetter * CurrentFahrrad.FRitzel)) * CurrentFahrrad.CurrentRitze * CurrentFahrrad.CurrentKette)
+        'Hier wird die Geschwindigkeit hoch gezählt,
+        While CurrentFahrrad.Geschwindigkeit < ((CurrentFahrrad.FMaxGeschw / (CurrentFahrrad.FKettenblaetter * CurrentFahrrad.FRitzel)) * CurrentFahrrad.CurrentRitze * CurrentFahrrad.CurrentKette) And CurrentFahrrad.Geschwindigkeit < AngGeschwindigkeit
             CurrentFahrrad.Geschwindigkeit += 0.1
             GeschwAnzeige.Text = $"{CurrentFahrrad.Geschwindigkeit.ToString("F1")} km/h"
             GeschwAnzeige.Refresh()
@@ -83,7 +89,7 @@
         End While
 
         'Hier wird die Geschwindigkeit runter gezählt 
-        While CurrentFahrrad.Geschwindigkeit > (((CurrentFahrrad.FMaxGeschw / (CurrentFahrrad.FKettenblaetter * CurrentFahrrad.FRitzel)) * CurrentFahrrad.CurrentKette * CurrentFahrrad.CurrentRitze) + 1)
+        While CurrentFahrrad.Geschwindigkeit > (((CurrentFahrrad.FMaxGeschw / (CurrentFahrrad.FKettenblaetter * CurrentFahrrad.FRitzel)) * CurrentFahrrad.CurrentKette * CurrentFahrrad.CurrentRitze) + 1) Or CurrentFahrrad.Geschwindigkeit > AngGeschwindigkeit And AngGeschwindigkeit > 0
             CurrentFahrrad.Geschwindigkeit -= 0.1
             GeschwAnzeige.Text = $"{CurrentFahrrad.Geschwindigkeit.ToString("F1")} km/h"
             GeschwAnzeige.Refresh()
